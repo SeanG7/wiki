@@ -3,6 +3,7 @@ class CreateWikiPages < ActiveRecord::Migration[5.0]
     create_table :wiki_pages do |t|
       t.text :contentMD
       t.text :contentHTML
+      t.references :parent
       t.string :title
       t.string :author
 
