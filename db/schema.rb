@@ -10,6 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170319065441) do
+
+  create_table "wiki_pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "contentMD",   limit: 65535
+    t.text     "contentHTML", limit: 65535
+    t.integer  "parent_id"
+    t.string   "title"
+    t.string   "author"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["parent_id"], name: "index_wiki_pages_on_parent_id", using: :btree
+  end
 
 end
