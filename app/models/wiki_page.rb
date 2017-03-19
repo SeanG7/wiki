@@ -1,0 +1,2 @@
+class WikiPage < ApplicationRecord
+end
